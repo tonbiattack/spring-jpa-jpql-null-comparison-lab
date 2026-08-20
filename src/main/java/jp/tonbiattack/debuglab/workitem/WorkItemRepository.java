@@ -8,6 +8,8 @@ import org.springframework.data.repository.query.Param;
 
 public interface WorkItemRepository extends JpaRepository<WorkItem, Long> {
 
-    @Query("select workItem from WorkItem workItem where workItem.assignee = :assignee")
+    @Query("select workItem from WorkItem workItem "
+            + "where (:assignee is null and workItem.assignee is null) "
+            + "or workItem.assignee = :assignee")
     List<WorkItem> findByAssignee(@Param("assignee") String assignee);
 }
