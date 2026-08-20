@@ -34,7 +34,7 @@ JPQLの等価比較演算子`=`をnull値に対して使い、`IS NULL`述語を
 | 直接観測 | 同じ初期状態で、EntityManagerの`assignee = :assignee`と`assignee IS NULL`の結果件数・IDを比較する。 |
 | 決定性 | H2インメモリDB、固定文字列、テストトランザクションを使う。時刻、乱数、ネットワーク、外部I/Oは使わない。 |
 | 固定状態の検証コマンド | `mvn --batch-mode clean test` |
-| バグ状態の確認コマンド | バグコミット確定後、`git checkout <bug-commit>`で`mvn --batch-mode test -Dtest=WorkItemRepositoryTest`を実行する。 |
+| バグ状態の確認コマンド | `git checkout 07d2d61`で`mvn --batch-mode test -Dtest=WorkItemRepositoryTest`を実行する。 |
 
 ## 仮説
 
